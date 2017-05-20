@@ -2,7 +2,18 @@ from readchar import readchar
 
 from lib import get_game_list, count_levels
 
-level = raw_input('Choose your level: 1, 2, 3, ...,' + str(count_levels()) + '\n')
+level_count = count_levels()
+while True:
+	try:
+		level = int(raw_input('Choose your level: 1, 2, 3, ...,' + str(level_count) + '\n'))
+		if level <= level_count and level > 0:
+			break
+		else:
+			print 'Number should be between 1 and {}.'.format(level_count)
+	except ValueError:
+		print 'That was no valid number. Try again.'
+
+
 game_list = get_game_list(int(level))
 print 'Type the displayed letter!'
 
