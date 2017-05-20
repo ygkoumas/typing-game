@@ -2,7 +2,7 @@
 Master touch typing and have fun
 
 ## How to install
-0. Install python (if it is not already intalled).
+0. Install python (if it is not already installed).
 1. Install readchar python package:
 ```
   $ pip install readchar
