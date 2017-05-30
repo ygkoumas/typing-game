@@ -21,9 +21,13 @@ for i in game_list:
 	print i
 	while True:
 		j = readchar()
-		if j != i:
-			print 'You typed ' + '"{}"'.format(j) + '. Try again to type '+'"{}"'.format(i)+'.'
-		else:
+		if j == i:
 			break
+		elif j == '\x03':
+			raise KeyboardInterrupt
+		elif j == '\x04':
+			raise EOFError
+		else:
+			print 'You typed ' + '"{}"'.format(j) + '. Try again to type '+'"{}"'.format(i)+'.'
 
 print 'Congratulations!!'
