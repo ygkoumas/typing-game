@@ -5,7 +5,8 @@ from lib import get_game_list, count_levels
 level_count = count_levels()
 while True:
 	try:
-		level = int(raw_input('Choose your level: 1, 2, 3, ...,' + str(level_count) + '\n'))
+		level_message = 'Choose your level: 1, 2, 3, ...,{}\n'.format(level_count)
+		level = int(raw_input(level_message))
 		if level <= level_count and level > 0:
 			break
 		else:
@@ -28,6 +29,6 @@ for i in game_list:
 		elif j == '\x04':
 			raise EOFError
 		else:
-			print 'You typed ' + '"{}"'.format(j) + '. Try again to type '+'"{}"'.format(i)+'.'
+			print 'You typed "{}". Try again to type "{}".'.format(j, i)
 
 print 'Congratulations!!'
